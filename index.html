@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <link rel="stylesheet" href="Forms.css">
+</head>
+<body>
+    <div class="container">    
+    <form action="" method="get">
+        <section>
+            <h1 class="main_heading">Payment Form</h1>
+            <hr>
+            <h2>Contact Information</h2>
+
+            <p>Required fields are follower by *</p>
+            <p>Name: *<input type="text" name="name" required placeholder="Example"></p> <!-- for a FORM element the name attribute is use as a reference when the data is submitted to the server or database  -->
+            
+            <fieldset> <!-- Some elements are optionally grouped under a common name fieldset tag can group att thse common element like here we have grouped gender elements in one -->
+                <legend>Gender</legend> <!-- Legend tag use to give name to the grouped elements -->
+                <p>
+                    Male <input type="radio" name="gender" id="male">
+                    Female <input type="radio" name="gender" id="female">
+                    Other <input type="radio" name="gender" id="other"> <!-- If we do not use name attribute and specify same name in all three to tell HTML these are all come under same catagory then it will not let us select only one option then we can select multiple option, using name attribute with common name lets us choose only one option which we ususlly need in such conditions.-->
+                </p>
+            </fieldset>
+
+            <p>Address: *<textarea name="Address" id="Address" cols="50" rows="10" placeholder="Enter your Address..."></textarea></p>
+
+            <p>Email: <input type="email" name="email" id="email" placeholder="example@gmail.com"></p>
+
+            <p>Pincode: *<input type="number" name="Pincode" id="Pincode" placeholder="012345"></p>
+        </section>
+
+        <section>
+            <h2>Payment Information</h2>
+            
+            <p>Card Type:  <!-- Create a drop down using select tag-->
+                <select name="card_type" id="card_type">
+                    <option value="">--Select a Card Type--</option>   <!-- First option should left empty otherwise it will by default goes to server Database-->
+                    <option value="visa">Visa</option>
+                    <option value="rupay">RuPay</option>
+                    <option value="mastercard">MasterCard</option>
+                </select>
+            </p>
+
+            <p>
+                Card Number: *<input type="number" name="cardNumber" id="cardNumber" required>
+            </p>
+
+            <p>
+                Expiration Date: <input type="date" name="expDate" id="expDate">
+            </p>
+
+            <p>
+                CVV: *<input type="password" name="cvv" id="cvv" required>
+            </p>
+
+            <input type="submit" value="Pay Now">
+        </section>
+    </form>
+    </div>
+</body>
+</html>
